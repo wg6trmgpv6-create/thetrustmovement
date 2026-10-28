@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE TRUST MOVEMENT | Official Party Platform</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#9A3412', // Burnt Terracotta (Primary Base 60%)
+                            600: '#7c2d12',
+                            800: '#431407',
+                            900: '#290b04',
+                            950: '#180602',
+                        },
+                        secondary: {
+                            800: '#334155',
+                            900: '#1E293B', // Dark Slate (Secondary Neutral 25%)
+                            950: '#0f172a',
+                        },
+                        accent: {
+                            500: '#F59E0B', // Golden Amber (Interactive Accent 10%)
+                            600: '#d97706',
+                            700: '#b45309',
+                        },
+                        surface: {
+                            DEFAULT: '#FDFBF7', // Warm Sand / Ivory (Background Surface 5%)
+                            light: '#F8FAFC',
+                            card: '#FFFFFF',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FDFBF7; color: #1E293B; }
+        .ora-badge { font-family: 'JetBrains Mono', monospace; }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1E293B; }
+        ::-webkit-scrollbar-thumb { background: #9A3412; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #F59E0B; }
+    </style>
+</head>
+<body class="bg-surface text-secondary-900 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col">
+
+    <!-- TOP ANNOUNCEMENT BAR -->
+    <div class="bg-gradient-to-r from-secondary-900 via-secondary-800 to-brand-800 border-b border-brand-500/20 text-xs py-2 px-4 text-center font-medium text-brand-100 flex items-center justify-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-accent-500 animate-pulse"></span>
+        <span>INFORMATION DOMAIN LIVE DATA PROTOCOL ACTIVE — 20% UNIMPROVED LAND AUCTION RATE CALIBRATED</span>
+        <button onclick="toggleOraModal()" class="underline font-bold hover:text-accent-500 ml-2 transition">Test Risk Telemetry</button>
+    </div>
+
+    <!-- MAIN NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-surface/90 backdrop-blur-md border-b border-secondary-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-brand-500 to-accent-500 flex items-center justify-center font-black text-white text-xl tracking-tighter shadow-lg shadow-brand-500/20">
+                        TM
+                    </div>
+                    <div>
+                        <a href="#" class="text-xl font-black tracking-tight text-secondary-900 flex items-center gap-2">
+                            THE TRUST MOVEMENT
+                        </a>
+                        <span class="block text-[10px] uppercase tracking-widest text-brand-500 font-bold">Empowerment Through Information</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-1">
+                    <a href="#philosophy" class="px-3 py-2 rounded-md text-sm font-medium text-secondary-800 hover:text-brand-500 hover:bg-secondary-100 transition">Philosophy</a>
+                    <a href="#federal" class="px-3 py-2 rounded-md text-sm font-medium text-secondary-800 hover:text-brand-500 hover:bg-secondary-100 transition">Federal Governance</a>
+                    <a href="#state" class="px-3 py-2 rounded-md text-sm font-medium text-secondary-800 hover:text-brand-500 hover:bg-secondary-100 transition">State Governance</a>
+                    <a href="#calculator" class="px-3 py-2 rounded-md text-sm font-medium text-secondary-800 hover:text-brand-500 hover:bg-secondary-100 transition">Net Civic Return Calculator</a>
+                    <a href="#get-involved" class="ml-4 px-4 py-2 rounded-lg text-sm font-bold bg-brand-500 hover:bg-brand-600 text-white shadow-md shadow-brand-500/20 transition">Join Movement</a>
+                </nav>
+
+                <!-- Mobile menu button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-md text-secondary-800 hover:text-brand-500 hover:bg-secondary-100">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-secondary-200 bg-surface px-4 pt-2 pb-4 space-y-2">
+            <a href="#philosophy" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-secondary-800 hover:bg-secondary-100">Philosophy</a>
+            <a href="#federal" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-secondary-800 hover:bg-secondary-100">Federal Governance</a>
+            <a href="#state" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-secondary-800 hover:bg-secondary-100">State Governance</a>
+            <a href="#calculator" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium text-secondary-800 hover:bg-secondary-100">Net Civic Return Calculator</a>
+            <a href="#get-involved" onclick="toggleMobileMenu()" class="block w-full text-center px-4 py-2 rounded-md font-bold bg-brand-500 text-white">Join Movement</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28 border-b border-secondary-200 bg-gradient-to-b from-surface via-surface-light to-surface">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(154,52,18,0.1),rgba(255,255,255,0))]"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-brand-500 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <span>A Radically Fair Operating System for American Governance</span>
+                </div>
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-secondary-900 tracking-tight leading-none mb-6">
+                    Truth Through Data.<br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-500 via-accent-600 to-brand-600">
+                        Accountability Through Markets.
+                    </span>
+                </h1>
+                <p class="text-lg sm:text-xl text-secondary-800 font-normal leading-relaxed mb-10 max-w-3xl mx-auto">
+                    Replacing paternalistic bureaucratic bans with radical unvarnished truth, market-driven liability insurance, and a $17,500 annual Universal Investment Account for every citizen.
+                </p>
+                
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#platform-explorer" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-lg shadow-xl shadow-brand-500/25 transition transform hover:-translate-y-0.5">
+                        Explore Full Platform
+                    </a>
+                    <a href="#calculator" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-secondary-900 hover:bg-secondary-800 border border-secondary-800 text-white font-bold text-lg transition flex items-center justify-center gap-2">
+                        <svg class="w-5 h-5 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                        Calculate Your Net Civic Return
+                    </a>
+                </div>
+            </div>
+
+            <!-- 4 CORE DOCTRINE SUMMARY CARDS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16" id="philosophy">
+                <!-- Doctrine 1 -->
+                <div class="bg-surface-card border border-secondary-200 p-6 rounded-2xl hover:border-brand-500/50 shadow-sm transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 flex items-center justify-center text-xl font-bold mb-4">
+                        01
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Empowerment via Information</h3>
+                    <p class="text-sm text-secondary-800 leading-relaxed">
+                        Shifting government from paternalistic prohibition to neutral, unvarnished truth-telling through centralized open-data infrastructure in the Information Domain.
+                    </p>
+                </div>
+
+                <!-- Doctrine 2 -->
+                <div class="bg-surface-card border border-secondary-200 p-6 rounded-2xl hover:border-brand-500/50 shadow-sm transition">
+                    <div class="w-12 h-12 rounded-xl bg-accent-500/10 border border-accent-500/30 text-accent-600 flex items-center justify-center text-xl font-bold mb-4">
+                        02
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Insurance-as-Regulation</h3>
+                    <p class="text-sm text-secondary-800 leading-relaxed">
+                        Replacing regulatory bureaucracies with mandatory third-party liability insurance. Uninsured operation carries personal incarceration penalties with zero government backstops.
+                    </p>
+                </div>
+
+                <!-- Doctrine 3 -->
+                <div class="bg-surface-card border border-secondary-200 p-6 rounded-2xl hover:border-brand-500/50 shadow-sm transition">
+                    <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-500 flex items-center justify-center text-xl font-bold mb-4">
+                        03
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary-900 mb-2">State as Accelerator</h3>
+                    <p class="text-sm text-secondary-800 leading-relaxed">
+                        Re-conceptualizing government as an accelerator that speeds up economic, environmental, and civic adjustments over a 10- to 20-year horizon.
+                    </p>
+                </div>
+
+                <!-- Doctrine 4 -->
+                <div class="bg-surface-card border border-secondary-200 p-6 rounded-2xl hover:border-brand-500/50 shadow-sm transition">
+                    <div class="w-12 h-12 rounded-xl bg-secondary-900/10 border border-secondary-900/30 text-secondary-900 flex items-center justify-center text-xl font-bold mb-4">
+                        04
+                    </div>
+                    <h3 class="text-lg font-bold text-secondary-900 mb-2">Federalist Realignment</h3>
+                    <p class="text-sm text-secondary-800 leading-relaxed">
+                        Federal authority strictly limited to defense, foreign relations, open data, civil rights, and credential portability. Domestic policy devolved to states.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE POLICY EXPLORER HEADER & CONTROLS -->
+    <section id="platform-explorer" class="py-12 bg-surface border-b border-secondary-200 sticky top-20 z-30 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <h2 class="text-2xl font-black text-secondary-900 tracking-tight">Interactive Platform Explorer</h2>
+                    <p class="text-xs text-secondary-800">Search 12 detailed policy sections or filter by domain</p>
+                </div>
+
+                <!-- Search Input & Quick Filters -->
+                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                    <div class="relative flex-grow sm:w-72">
+                        <input type="text" id="policySearch" oninput="filterPolicies()" placeholder="Search platform policies..." class="w-full bg-surface-card border border-secondary-200 rounded-xl px-4 py-2 text-sm text-secondary-900 focus:outline-none focus:border-brand-500 transition">
+                        <svg class="w-4 h-4 text-secondary-800 absolute right-3 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+
+                    <!-- Category Pills -->
+                    <div class="flex gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
+                        <button onclick="setFilter('all')" class="filter-btn active-filter px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-brand-500 text-white transition" data-filter="all">All Sections</button>
+                        <button onclick="setFilter('federal')" class="filter-btn px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-surface-card border border-secondary-200 text-secondary-800 hover:text-brand-500 transition" data-filter="federal">Part I: Federal</button>
+                        <button onclick="setFilter('state')" class="filter-btn px-3 py-2 rounded-xl text-xs font-bold whitespace-nowrap bg-surface-card border border-secondary-200 text-secondary-800 hover:text-brand-500 transition" data-filter="state">Part II: State</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPREHENSIVE PLATFORM SECTIONS CONTAINER -->
+    <main class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 flex-grow">
+
+        <!-- PART I: FEDERAL LEVEL GOVERNANCE HEADER -->
+        <div class="part-header" data-part="federal" id="federal">
+            <div class="flex items-center gap-4 mb-2">
+                <span class="px-3 py-1 bg-brand-500/10 border border-brand-500/30 text-brand-500 font-mono text-xs font-bold uppercase rounded-md">PART I</span>
+                <h2 class="text-3xl font-black text-secondary-900 tracking-tight">Federal Level Governance</h2>
+            </div>
+            <p class="text-secondary-800 text-sm max-w-3xl">Federal authority is limited strictly to core sovereign functions: national defense, foreign relations, open data infrastructure, baseline civil rights, and national credential portability.</p>
+        </div>
+
+        <!-- SECTION 1 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="federal" data-keywords="defense military deployment branches logistics 20-year budget FAR procurement drones intelligence">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 1</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">National Defense & Military Restructuring</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-secondary-100 border border-secondary-200 rounded-lg text-xs font-mono text-secondary-800">Defense & Sovereignty</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="p-1.5 bg-brand-500/10 text-brand-500 rounded-lg mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+                        <div>
+                            <strong class="text-secondary-900 block mb-0.5">Five Operational Service Branches:</strong>
+                            Special Forces, The Guard, The Pilot Corps, The Officer Corps, and the Intelligence Branch (consolidating military intelligence, DIA, NRO, NGA, and foreign intelligence from disbanded CIA and NSA).
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="p-1.5 bg-brand-500/10 text-brand-500 rounded-lg mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+                        <div>
+                            <strong class="text-secondary-900 block mb-0.5">Civilianization of Logistics & Support:</strong>
+                            Non-combat support roles (logistics, maintenance, medical support, catering, base facilities) transition to civilian contracts paid at competitive market rates.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="p-1.5 bg-brand-500/10 text-brand-500 rounded-lg mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+                        <div>
+                            <strong class="text-secondary-900 block mb-0.5">20-Year Defense Efficiency Mandate:</strong>
+                            Reduce defense spending by 50% over 20 years while doubling combat capability through automated force multipliers, autonomous drone swarms, and electronic warfare.
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="p-1.5 bg-brand-500/10 text-brand-500 rounded-lg mt-0.5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg></div>
+                        <div>
+                            <strong class="text-secondary-900 block mb-0.5">Defense-Only Deployment Mandate:</strong>
+                            Military deployments are legally restricted to defending national territory, borders, and international sea lanes. Nation-building and regime-change interventions are strictly prohibited.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Do you support cutting defense spending 50% while doubling combat automation?</span>
+                <div class="flex items-center gap-2" id="poll-sec-1">
+                    <button onclick="vote('sec-1', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-1', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-1', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 2 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="federal" data-keywords="foreign policy trade tariffs sanctions navigation border integrity free trade">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 2</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">Foreign Policy, Trade & International Relations</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-secondary-100 border border-secondary-200 rounded-lg text-xs font-mono text-secondary-800">Global Commerce</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="bg-surface-light p-5 rounded-xl border border-secondary-200">
+                    <strong class="text-brand-500 font-bold block mb-2 text-base">Zero-Tariff Commercial Standard</strong>
+                    Unilateral abolition of all tariffs, quotas, and regulatory trade barriers on non-sanctioned foreign nations to foster global open trade and lower consumer costs.
+                </div>
+                <div class="bg-surface-light p-5 rounded-xl border border-secondary-200">
+                    <strong class="text-brand-500 font-bold block mb-2 text-base">Targeted Geopolitical Sanctions</strong>
+                    Economic trade restrictions are strictly limited to targeted geopolitical leverage against aggressive, hostile, or rights-violating foreign regimes.
+                </div>
+                <div class="bg-surface-light p-5 rounded-xl border border-secondary-200">
+                    <strong class="text-brand-500 font-bold block mb-2 text-base">Freedom of Navigation & Borders</strong>
+                    Direct federal responsibility for securing national territorial integrity, international maritime corridors, and international air space.
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support unilateral zero-tariff free trade with non-hostile nations?</span>
+                <div class="flex items-center gap-2" id="poll-sec-2">
+                    <button onclick="vote('sec-2', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-2', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-2', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 3 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="federal" data-keywords="information domain vault analytics transparency redistricting algorithms default public ratio CRS">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 3</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">The Information Domain Architecture & Public Disclosure</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-brand-500/20 border border-brand-500/40 rounded-lg text-xs font-mono text-brand-500 font-bold">Core Pillar</span>
+                </div>
+            </div>
+
+            <div class="space-y-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-secondary-900 text-base">Unbundled Information Domain Engines</h4>
+                        <p>To eliminate discretionary power, the Information Domain operates autonomous engines: Information Data Vaults, Information Science, Information Transparency, and Civic Infrastructure.</p>
+                        <p><strong class="text-secondary-900">Public-Domain Financial Transparency:</strong> Any individual or corporate action touching public assets, government disbursements, or legal systems requires unedited publication in Data Vaults.</p>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="font-bold text-secondary-900 text-base">Standardized Ratio Telemetry & CRS</h4>
+                        <ul class="space-y-2 list-disc list-inside text-secondary-800">
+                            <li><strong class="text-secondary-900">Analytics & Trend Monitoring:</strong> Quantitative analysis monitoring systemic risk in economy, pathogen feeds, satellite data, and domestic security telemetry.</li>
+                            <li><strong class="text-secondary-900">Standardized Ratios:</strong> Translates telemetry into simple ratio disclosures (e.g., <em>"In 50 accidents in this vehicle, 7 end in death; average vehicle is 4"</em>).</li>
+                            <li><strong class="text-secondary-900">CRS Legislative Research:</strong> Absorbs Congressional Research Service to publish raw legislative impact research directly to citizens.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                    <strong class="text-brand-500 font-bold block mb-1">Automated Open-Source Redistricting Engine:</strong>
+                    Generates legislative maps via strict geometric algorithms (compactness, contiguity, population equality). Voter registration statistics and party IDs are legally banned from the mapping code.
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support replacing gerrymandering with open-source geometric algorithms and public data default disclosures?</span>
+                <div class="flex items-center gap-2" id="poll-sec-3">
+                    <button onclick="vote('sec-3', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-3', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-3', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 4 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="federal" data-keywords="credential portability IP patent copyright statutory royalty CBDC cash digital cash privacy">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 4</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">Credential Portability, IP & Monetary Safeguards</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-secondary-100 border border-secondary-200 rounded-lg text-xs font-mono text-secondary-800">Innovation & Markets</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="space-y-3">
+                    <h4 class="font-bold text-secondary-900 text-base">Intellectual Property & Licensing Reform</h4>
+                    <p><strong class="text-secondary-900">Statutory Royalty Model for Patents:</strong> Eliminates 20-year legal patent monopolies. Any entity can manufacture any design from day one by paying an automated statutory micro-royalty directly to the original inventor.</p>
+                    <p><strong class="text-secondary-900">Copyright Term Caps:</strong> Corporate / work-for-hire copyright term capped at 10 years. Individual creators receive up to 30 years (transferring to a corporate entity drops protection to 10 years).</p>
+                </div>
+
+                <div class="space-y-3">
+                    <h4 class="font-bold text-secondary-900 text-base">Monetary Freedom & Portability</h4>
+                    <p><strong class="text-secondary-900">No Bailouts or Subsidies:</strong> Zero government subsidies, credits, or corporate bailouts. Entities manage risk using Information Domain data and private insurance markets.</p>
+                    <p><strong class="text-secondary-900">CBDC Ban & Digital Cash Privacy:</strong> Central Bank Digital Currencies are strictly prohibited. Peer-to-peer financial freedom is guaranteed via private, encrypted open-source digital settlement protocols operating as digital cash equivalents with offline support.</p>
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support replacing 20-year patent monopolies with automated statutory royalties?</span>
+                <div class="flex items-center gap-2" id="poll-sec-4">
+                    <button onclick="vote('sec-4', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-4', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-4', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 5 & 6 COMBINED -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-part="federal">
+            <!-- SECTION 5 -->
+            <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 hover:border-brand-500/50 shadow-sm transition" data-keywords="taxation requisition state federal land auctions military bases devolved">
+                <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 5</span>
+                <h3 class="text-xl font-bold text-secondary-900 mb-3">Taxation & Requisition</h3>
+                <p class="text-sm text-secondary-800 leading-relaxed mb-4">
+                    Direct federal income, corporate, and sales taxes are abolished. States fund the federal budget via requisitions proportional to each state's Tax Share volume. Non-defense federal lands devolve directly to host states. Military bases subject to Land Auctions generate direct credits toward host states' balances.
+                </p>
+                <div class="text-xs text-secondary-700 font-mono">No direct federal income/sales taxation on individuals.</div>
+            </article>
+
+            <!-- SECTION 6 -->
+            <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 hover:border-brand-500/50 shadow-sm transition" data-keywords="electoral RCV ranked choice voting age cap megastates judicial reform restitution blind trusts">
+                <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 6</span>
+                <h3 class="text-xl font-bold text-secondary-900 mb-3">Electoral, Governance & Judicial Reforms</h3>
+                <ul class="text-sm text-secondary-800 space-y-2 leading-relaxed">
+                    <li>• <strong>Ranked-Choice Voting (RCV):</strong> Mandated across all state and federal elections.</li>
+                    <li>• <strong>Age 70 Eligibility Cap:</strong> Maximum age cap of 70 for election or appointment to executive, legislative, or judicial office.</li>
+                    <li>• <strong>State Realignment:</strong> Megastates split; micro-states consolidated into contiguous regional entities.</li>
+                    <li>• <strong>Restitution-Focused Justice:</strong> Mandatory minimums and death penalty abolished; replaced by victim restitution work programs.</li>
+                </ul>
+            </article>
+        </div>
+
+        <!-- SECTION 7 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="federal" data-keywords="science discovery research grant replication bounties ISO SDE raw data verification">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 7</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">Scientific Discovery, Open Research & Capital Markets</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-secondary-100 border border-secondary-200 rounded-lg text-xs font-mono text-secondary-800">Open Science</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="space-y-3">
+                    <h4 class="font-bold text-secondary-900 text-base">Abolition of Grant Bureaucracy & Raw Data Mandate</h4>
+                    <p>Direct political grant agencies (NIH, NSF) are disbanded. Science is funded through citizen UIA investments, statutory royalties, and market replication bounties. All research impacting public health or safety must publish raw datasets to Information Data Vaults.</p>
+                </div>
+                <div class="space-y-3">
+                    <h4 class="font-bold text-secondary-900 text-base">Replication Bounties & Scientific Discovery Exchange</h4>
+                    <p>Research funds flow exclusively to independent laboratories that successfully replicate findings. Basic scientific discoveries register Statutory Royalty Units (SRUs) and conduct Initial Science Offerings (ISOs) on the SDE to secure up-front capital.</p>
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support replacing political grant bureaucracies with replication bounties and Initial Science Offerings?</span>
+                <div class="flex items-center gap-2" id="poll-sec-7">
+                    <button onclick="vote('sec-7', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-7', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-7', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+
+        <!-- PART II: STATE LEVEL GOVERNANCE HEADER -->
+        <div class="part-header pt-8" data-part="state" id="state">
+            <div class="flex items-center gap-4 mb-2">
+                <span class="px-3 py-1 bg-brand-500/10 border border-brand-500/30 text-brand-500 font-mono text-xs font-bold uppercase rounded-md">PART II</span>
+                <h2 class="text-3xl font-black text-secondary-900 tracking-tight">State Level Governance</h2>
+            </div>
+            <p class="text-secondary-800 text-sm max-w-3xl">Domestic governance, land tenure, revenue, education, zoning, social safety nets, and local environmental stewardship are fully devolved to state jurisdiction.</p>
+        </div>
+
+        <!-- SECTION 8 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="state" data-keywords="revenue land tenure shares property rights land auctions zero carve-outs tax share price">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 8</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">Revenue, Land Tenure, Shares & Property Rights (20% Land Auction Rate)</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-brand-500/20 border border-brand-500/40 rounded-lg text-xs font-mono text-brand-500 font-bold">20% Auction Model</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="space-y-4">
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">State Land Ownership & Revenue</strong>
+                        The state holds underlying territorial sovereignty over all land. All state revenue originates exclusively from 10-year blind Land Auctions (calibrated to a 20% annualized unimproved land valuation share) — eliminating income, sales, or personal property taxes.
+                    </div>
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">Tax Shares & Price Stabilization</strong>
+                        Tax Share price = Total state budget divided by active Tax Shares. Annual share prices cannot fluctuate more than ±10% relative to the prior year.
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">10-Year Blind Land Auctions</strong>
+                        Every 10 years, land parcels are open for blind Tax Share bids. Longer leases are discounted to favor short-term (10-year) bidders. Current leaseholders have the right to match the highest bid.
+                    </div>
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-brand-500 block font-bold mb-1">Zero Carve-Outs Policy</strong>
+                        Churches, non-profits, government facilities, parks, and preserves receive no automatic exemptions from Land Auctions. Society makes intentional choices about public value by outbidding alternative uses.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support funding state budgets via 20% unimproved Land Auctions rather than income or property tax?</span>
+                <div class="flex items-center gap-2" id="poll-sec-8">
+                    <button onclick="vote('sec-8', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-8', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-8', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 9 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="state" data-keywords="zoning housing linear corridors physical improvements buildings bidding">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 9</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">Zoning, Housing & Infrastructure Corridors</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-secondary-100 border border-secondary-200 rounded-lg text-xs font-mono text-secondary-800">Urban Development</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="bg-surface-light p-5 rounded-xl border border-secondary-200">
+                    <strong class="text-secondary-900 font-bold block mb-2">100% Private Capital Improvements</strong>
+                    Physical structures, homes, and buildings remain 100% private property and can be transferred or sold freely to new land leaseholders.
+                </div>
+                <div class="bg-surface-light p-5 rounded-xl border border-secondary-200">
+                    <strong class="text-secondary-900 font-bold block mb-2">Abolition of Zoning Bans</strong>
+                    No parking mandates, density caps, floor-area ratios, or aesthetic boards. Communities wishing to preserve open space must outbid alternative development in auctions.
+                </div>
+                <div class="bg-surface-light p-5 rounded-xl border border-secondary-200">
+                    <strong class="text-secondary-900 font-bold block mb-2">Linear Corridor Auctions</strong>
+                    One mid-cycle auction per decade permitted strictly for certified transit, utility, high-speed rail, or linear infrastructure projects.
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support abolishing restrictive zoning bans and parking mandates?</span>
+                <div class="flex items-center gap-2" id="poll-sec-9">
+                    <button onclick="vote('sec-9', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-9', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-9', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 10 -->
+        <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 sm:p-8 hover:border-brand-500/50 shadow-sm transition" data-part="state" data-keywords="UIA universal investment account safety net dividend social security medicare garnishment special needs">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-secondary-200 pb-4 mb-6">
+                <div>
+                    <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 10</span>
+                    <h3 class="text-xl sm:text-2xl font-bold text-secondary-900">Social Safety Net: Universal Investment Account (UIA)</h3>
+                </div>
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 bg-brand-500/20 border border-brand-500/40 rounded-lg text-xs font-mono text-brand-500 font-bold">$17,500 / Year</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-secondary-800 text-sm leading-relaxed mb-6">
+                <div class="space-y-4">
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">$17,500 Annual Dividend</strong>
+                        Every citizen receives $17,500 annually into a UIA target-date index fund disbursed weekly. Inflation adjusted. Full liquidity allowed anytime for any legal purpose.
+                    </div>
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">Garnishment Protection</strong>
+                        Up to 50% of weekly UIA disbursement may be garnished for unpaid medical bills, legal fines, or victim restitution. Private debt garnishment is legally prohibited.
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">Special Needs Protection</strong>
+                        Individuals with verified special medical or developmental needs obtain 3 private insurance quotes; the state directly covers the portion of premium exceeding the annual UIA disbursement.
+                    </div>
+                    <div class="p-4 bg-surface-light rounded-xl border border-secondary-200">
+                        <strong class="text-secondary-900 block font-bold mb-1">Legacy Program Transition</strong>
+                        Earned Social Security/Medicare discounted at 7% interest minus lifetime UIA received; remaining surplus paid out in a lump sum. Legacy administrative welfare bureaucracies are phased out.
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-surface-light rounded-xl p-4 border border-secondary-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <span class="text-xs text-secondary-800 font-medium">Support replacing legacy welfare bureaucracy with a $17,500 liquid Universal Investment Account?</span>
+                <div class="flex items-center gap-2" id="poll-sec-10">
+                    <button onclick="vote('sec-10', 'support')" class="px-3 py-1.5 bg-surface-card hover:bg-brand-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👍 Support</button>
+                    <button onclick="vote('sec-10', 'refine')" class="px-3 py-1.5 bg-surface-card hover:bg-accent-500 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">🤔 Refine</button>
+                    <button onclick="vote('sec-10', 'oppose')" class="px-3 py-1.5 bg-surface-card hover:bg-secondary-900 hover:text-white border border-secondary-200 text-secondary-800 text-xs rounded-lg transition font-bold">👎 Oppose</button>
+                </div>
+            </div>
+        </article>
+
+        <!-- SECTION 11 & 12 COMBINED -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" data-part="state">
+            <!-- SECTION 11 -->
+            <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 hover:border-brand-500/50 shadow-sm transition" data-keywords="education choice school public schools counseling statistics tuition state level">
+                <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 11</span>
+                <h3 class="text-xl font-bold text-secondary-900 mb-3">Education & State Civic Guidance</h3>
+                <p class="text-sm text-secondary-800 leading-relaxed mb-4">
+                    Public schools operate on a fee-for-service model without direct operational state funding, leasing land in auctions. Families utilize UIA funds with full autonomy. Devolved state counselors provide 4 hours/year of mandatory non-biased statistical guidance on career completion rates and safety records.
+                </p>
+            </article>
+
+            <!-- SECTION 12 -->
+            <article class="policy-card bg-surface-card border border-secondary-200 rounded-2xl p-6 hover:border-brand-500/50 shadow-sm transition" data-keywords="externalities insurance regulation risk actuarial pricing CO2 pollution litigation whistleblowers criminal liability incarceration">
+                <span class="text-xs font-mono text-brand-500 font-bold uppercase tracking-wider">SECTION 12</span>
+                <h3 class="text-xl font-bold text-secondary-900 mb-3">Externalities & Insurance-as-Regulation</h3>
+                <p class="text-sm text-secondary-800 leading-relaxed mb-4">
+                    Administrative regulatory codes are abolished. All entities must hold certified 3rd-party liability insurance calibrated to max potential harm with zero government backstops. Uninsured operations carry strict criminal liability and personal incarceration. CO2, noise, light, and visual clutter are classified as priced externalities.
+                </p>
+            </article>
+        </div>
+
+    </main>
+
+    <!-- INTERACTIVE NET CIVIC RETURN CALCULATOR SECTION -->
+    <section id="calculator" class="py-16 bg-surface-card border-t border-secondary-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="px-3 py-1 bg-brand-500/10 border border-brand-500/30 text-brand-500 font-mono text-xs font-bold uppercase rounded-md">SIMULATOR ENGINE (20% LAND AUCTION MODEL)</span>
+                <h2 class="text-3xl font-black text-secondary-900 mt-2">Net Civic Return Calculator</h2>
+                <p class="text-secondary-800 text-sm mt-1 max-w-2xl mx-auto">Model your true household economic outcome under zero income/sales taxes, $17,500 annual UIA capital inflows, cheaper consumer goods, and a 20% unimproved Land Auction lease rate.</p>
+            </div>
+
+            <!-- ARCHETYPE PROFILE PRESETS -->
+            <div class="mb-8 bg-surface p-4 sm:p-6 rounded-2xl border border-secondary-200 shadow-sm">
+                <span class="text-xs font-bold text-secondary-800 uppercase tracking-wider block mb-3 text-center sm:text-left">Select a Representative Household Profile:</span>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-2 sm:gap-3">
+                    <button onclick="loadProfile('marcus')" class="preset-btn p-2.5 bg-surface-card hover:bg-brand-50 hover:border-brand-500 border border-secondary-200 rounded-xl text-left transition group shadow-sm">
+                        <div class="text-xs font-bold text-secondary-900 group-hover:text-brand-500">Marcus Vance</div>
+                        <div class="text-[10px] text-secondary-700">Tech Billionaire</div>
+                    </button>
+                    <button onclick="loadProfile('elena')" class="preset-btn p-2.5 bg-surface-card hover:bg-brand-50 hover:border-brand-500 border border-secondary-200 rounded-xl text-left transition group shadow-sm">
+                        <div class="text-xs font-bold text-secondary-900 group-hover:text-brand-500">Elena Rostova</div>
+                        <div class="text-[10px] text-secondary-700">Single Mother (3 Kids)</div>
+                    </button>
+                    <button onclick="loadProfile('millers')" class="preset-btn p-2.5 bg-surface-card hover:bg-brand-50 hover:border-brand-500 border border-secondary-200 rounded-xl text-left transition group shadow-sm">
+                        <div class="text-xs font-bold text-secondary-900 group-hover:text-brand-500">David & Sarah Miller</div>
+                        <div class="text-[10px] text-secondary-700">Suburban Family (2 Kids)</div>
+                    </button>
+                    <button onclick="loadProfile('jordan')" class="preset-btn p-2.5 bg-surface-card hover:bg-brand-50 hover:border-brand-500 border border-secondary-200 rounded-xl text-left transition group shadow-sm">
+                        <div class="text-xs font-bold text-secondary-900 group-hover:text-brand-500">Jordan Chen</div>
+                        <div class="text-[10px] text-secondary-700">Young Professional</div>
+                    </button>
+                    <button onclick="loadProfile('wrights')" class="preset-btn p-2.5 bg-surface-card hover:bg-brand-50 hover:border-brand-500 border border-secondary-200 rounded-xl text-left transition group shadow-sm">
+                        <div class="text-xs font-bold text-secondary-900 group-hover:text-brand-500">Arthur & Evelyn Wright</div>
+                        <div class="text-[10px] text-secondary-700">Retired Senior Couple</div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- SHORT QUESTIONNAIRE & RESULTS CONTAINER -->
+            <div class="bg-surface border border-secondary-200 rounded-3xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 shadow-xl">
+                
+                <!-- Questionnaire Inputs (7 Cols) -->
+                <div class="lg:col-span-7 space-y-5">
+                    <h3 class="text-sm font-bold text-brand-500 uppercase tracking-wider mb-2">Household Profile & Life Stage</h3>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">Adults (18+)</label>
+                            <input type="number" id="calcAdults" value="2" min="1" max="10" oninput="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-4 py-2.5 text-secondary-900 font-bold text-sm focus:outline-none focus:border-accent-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">Children (<18)</label>
+                            <input type="number" id="calcKids" value="2" min="0" max="10" oninput="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-4 py-2.5 text-secondary-900 font-bold text-sm focus:outline-none focus:border-accent-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">Stage in Life</label>
+                            <select id="calcLifeStage" onchange="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-3 py-2.5 text-secondary-900 font-bold text-xs focus:outline-none focus:border-accent-500">
+                                <option value="early_career">Early Career / Student</option>
+                                <option value="working_family" selected>Working Family</option>
+                                <option value="established">Established Executive</option>
+                                <option value="retired">Retired / Senior</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">Annual Household Income ($)</label>
+                            <input type="number" id="calcIncome" value="95000" step="2500" oninput="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-4 py-2.5 text-secondary-900 font-bold text-sm focus:outline-none focus:border-accent-500">
+                            <span class="text-[10px] text-secondary-600">Federal, State & Payroll taxes reduced to 0%</span>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">State / Region</label>
+                            <select id="calcState" onchange="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-3 py-2.5 text-secondary-900 font-bold text-xs focus:outline-none focus:border-accent-500">
+                                <option value="high">High Cost (CA, NY, MA, WA)</option>
+                                <option value="mid" selected>Moderate Cost (TX, FL, IL, OH, IN)</option>
+                                <option value="low">Low Cost (WV, MS, AR, IA)</option>
+                            </select>
+                            <span class="text-[10px] text-secondary-600">Used for regional land ratio benchmark</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">Home Market Value ($)</label>
+                            <input type="number" id="calcHomeValue" value="350000" step="10000" oninput="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-4 py-2.5 text-secondary-900 font-bold text-sm focus:outline-none focus:border-accent-500">
+                            <span class="text-[10px] text-secondary-600">Total estimated market value of residence</span>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-secondary-800 uppercase tracking-wider mb-1.5">Lot Size / Property Type</label>
+                            <select id="calcLotSize" onchange="calculateNetCivicReturn()" class="w-full bg-surface-card border border-secondary-200 rounded-xl px-3 py-2.5 text-secondary-900 font-bold text-xs focus:outline-none focus:border-accent-500">
+                                <option value="condo">Apartment / Condo (Low Land Unit)</option>
+                                <option value="urban">Urban Standard Lot</option>
+                                <option value="suburban_quarter" selected>Suburban 1/4 Acre Lot</option>
+                                <option value="suburban_half">Suburban 1/2 Acre Lot</option>
+                                <option value="rural_acre">1+ Acre / Rural Parcel</option>
+                            </select>
+                            <span class="text-[10px] text-secondary-600">Separates land value from untaxed building structure</span>
+                        </div>
+                    </div>
+
+                    <!-- Auto-estimated breakdown stats -->
+                    <div class="bg-surface-card p-3.5 rounded-xl border border-secondary-200 text-xs text-secondary-800 grid grid-cols-2 gap-2 font-mono shadow-sm">
+                        <div>Est. Annual Consumer Spending: <span class="text-secondary-900 font-bold" id="autoSpending">$52,250</span></div>
+                        <div>Est. Unimproved Land Value: <span class="text-secondary-900 font-bold" id="autoLandValue">$105,000</span></div>
+                    </div>
+                </div>
+
+                <!-- Live Results Box (5 Cols) -->
+                <div class="lg:col-span-5 bg-surface-card border border-secondary-200 rounded-2xl p-6 flex flex-col justify-between shadow-sm">
+                    <div>
+                        <div class="flex items-center justify-between border-b border-secondary-200 pb-3 mb-4">
+                            <h3 class="text-xs font-bold text-secondary-800 uppercase tracking-wider">Financial Breakdown</h3>
+                            <span class="text-[10px] font-mono text-brand-500 font-bold uppercase" id="profileLabel">David & Sarah Miller</span>
+                        </div>
+                        
+                        <div class="space-y-3 text-xs">
+                            <div class="flex justify-between items-center pb-1 border-b border-secondary-100">
+                                <span class="text-secondary-800">Universal Investment Account (+):</span>
+                                <span class="text-emerald-600 font-mono font-bold text-sm" id="resUIA">+$70,000</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pb-1 border-b border-secondary-100">
+                                <span class="text-secondary-800">Income & Payroll Tax Savings (+):</span>
+                                <span class="text-emerald-600 font-mono font-bold" id="resTaxSavings">+$20,900</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pb-1 border-b border-secondary-100">
+                                <span class="text-secondary-800">Employer Compensation Bump (+):</span>
+                                <span class="text-emerald-600 font-mono font-bold" id="resEmployerBump">+$4,750</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pb-1 border-b border-secondary-100">
+                                <span class="text-secondary-800">Cheaper Consumer Goods Discount (+):</span>
+                                <span class="text-emerald-600 font-mono font-bold" id="resConsumerSavings">+$5,225</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pb-1 border-b border-secondary-100">
+                                <span class="text-secondary-800">20% Land Auction Lease (-):</span>
+                                <span class="text-brand-600 font-mono font-bold" id="resLandLease">-$21,000</span>
+                            </div>
+
+                            <div class="flex justify-between items-center pb-1 border-b border-secondary-100">
+                                <span class="text-secondary-800">Education & Direct Service Costs (-):</span>
+                                <span class="text-brand-600 font-mono font-bold" id="resServiceFees">-$12,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 border-t border-secondary-200 mt-6">
+                        <span class="block text-xs text-secondary-800 font-bold uppercase tracking-wider">Estimated Annual Net Civic Return</span>
+                        <div class="text-3xl sm:text-4xl font-black text-brand-500 font-mono mt-1" id="resNetCivicReturn">+$67,875 / yr</div>
+                        <p class="text-[11px] text-secondary-600 mt-2">Compounding liquid capital growth replacing legacy administrative bureaucracy.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GET INVOLVED / ACTION SECTION -->
+    <section id="get-involved" class="py-20 bg-secondary-900 border-t border-secondary-800 relative overflow-hidden text-surface">
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight mb-4">Build the Movement of Truth</h2>
+            <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+                Sign up for platform updates, participate in district policy working groups, and track 100% transparent campaign disbursements in Information Data Vaults.
+            </p>
+
+            <form onsubmit="handleSignup(event)" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-8">
+                <input type="email" required placeholder="Enter your email address..." class="bg-secondary-950 border border-secondary-700 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-500 flex-grow">
+                <button type="submit" class="px-6 py-3 bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm rounded-xl transition shadow-lg shadow-brand-500/20">Join Trust Party</button>
+            </form>
+
+            <div id="signupFeedback" class="hidden text-accent-500 text-sm font-bold">
+                ✓ Thank you. Your email has been added to the open subscriber index in Information Data Vaults.
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary-950 border-t border-secondary-800 py-12 text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <div class="flex items-center gap-2 mb-1">
+                    <span class="font-black text-white">THE TRUST MOVEMENT</span>
+                    <span class="text-secondary-700">|</span>
+                    <span>OFFICIAL PARTY PLATFORM</span>
+                </div>
+                <p>Published in Information Data Vaults. Zero secret contributions.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#philosophy" class="hover:text-brand-400">Philosophy</a>
+                <a href="#federal" class="hover:text-brand-400">Federal</a>
+                <a href="#state" class="hover:text-brand-400">State</a>
+                <a href="#calculator" class="hover:text-brand-400">Net Civic Return Calculator</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- RISK DISCLOSURE MODAL SIMULATOR -->
+    <div id="oraModal" class="fixed inset-0 bg-secondary-950/80 backdrop-blur-md z-50 flex items-center justify-center hidden p-4">
+        <div class="bg-surface-card border-2 border-accent-500/80 rounded-2xl max-w-lg w-full p-6 shadow-2xl relative text-secondary-900">
+            <button onclick="toggleOraModal()" class="absolute top-4 right-4 text-secondary-700 hover:text-secondary-900 text-lg">✕</button>
+
+            <div class="flex items-center gap-3 mb-4">
+                <div class="p-2 bg-accent-500/20 text-accent-700 rounded-lg">
+                    ⚠️
+                </div>
+                <div>
+                    <span class="text-[10px] font-mono text-accent-700 font-bold tracking-widest block uppercase">INFORMATION TRANSPARENCY TELEMETRY</span>
+                    <h4 class="text-lg font-bold text-secondary-900">Standardized Ratio Telemetry</h4>
+                </div>
+            </div>
+
+            <p class="text-xs text-secondary-800 leading-relaxed mb-4">
+                Under Section 3 of The Trust Movement platform, complex disclosures are simplified into objective standardized ratios:
+            </p>
+
+            <div class="bg-surface-light p-4 rounded-xl border border-secondary-200 font-mono text-xs text-secondary-900 space-y-2 mb-6">
+                <div class="text-brand-600 font-bold">VEHICLE SAFETY RATIO (MODEL X):</div>
+                <div>"In 50 collisions involving this vehicle model, 7 ended in fatal injury. The industry average for this class is 4."</div>
+            </div>
+
+            <button onclick="toggleOraModal()" class="w-full py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition shadow-md">Acknowledge Telemetry</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Human Profiles (Named) with 20% Land Auction Rate calibration
+        const profiles = {
+            marcus: {
+                label: "Marcus Vance (Tech Billionaire)",
+                adults: 1,
+                kids: 0,
+                lifeStage: "established",
+                income: 50000000,
+                homeValue: 15000000,
+                lotSize: "urban",
+                state: "high"
+            },
+            elena: {
+                label: "Elena Rostova (Single Mother)",
+                adults: 1,
+                kids: 3,
+                lifeStage: "working_family",
+                income: 32000,
+                homeValue: 120000,
+                lotSize: "condo",
+                state: "mid"
+            },
+            millers: {
+                label: "David & Sarah Miller (Suburban Family)",
+                adults: 2,
+                kids: 2,
+                lifeStage: "working_family",
+                income: 95000,
+                homeValue: 350000,
+                lotSize: "suburban_quarter",
+                state: "mid"
+            },
+            jordan: {
+                label: "Jordan Chen (Young Professional)",
+                adults: 1,
+                kids: 0,
+                lifeStage: "early_career",
+                income: 55000,
+                homeValue: 200000,
+                lotSize: "condo",
+                state: "high"
+            },
+            wrights: {
+                label: "Arthur & Evelyn Wright (Retiree Couple)",
+                adults: 2,
+                kids: 0,
+                lifeStage: "retired",
+                income: 42000,
+                homeValue: 310000,
+                lotSize: "suburban_quarter",
+                state: "mid"
+            }
+        };
+
+        function loadProfile(key) {
+            const data = profiles[key];
+            if (!data) return;
+
+            document.getElementById('calcAdults').value = data.adults;
+            document.getElementById('calcKids').value = data.kids;
+            document.getElementById('calcLifeStage').value = data.lifeStage;
+            document.getElementById('calcIncome').value = data.income;
+            document.getElementById('calcHomeValue').value = data.homeValue;
+            document.getElementById('calcLotSize').value = data.lotSize;
+            document.getElementById('calcState').value = data.state;
+
+            document.getElementById('profileLabel').innerText = data.label;
+
+            calculateNetCivicReturn();
+        }
+
+        // Calculate Net Civic Return with 20% land lease rate and all archetypes
+        function calculateNetCivicReturn() {
+            const adults = parseInt(document.getElementById('calcAdults').value) || 0;
+            const kids = parseInt(document.getElementById('calcKids').value) || 0;
+            const lifeStage = document.getElementById('calcLifeStage').value;
+            const income = parseFloat(document.getElementById('calcIncome').value) || 0;
+            const homeValue = parseFloat(document.getElementById('calcHomeValue').value) || 0;
+            const lotSize = document.getElementById('calcLotSize').value;
+            const state = document.getElementById('calcState').value;
+
+            // 1. Universal Investment Account Inflow ($17,500 per citizen)
+            const totalPeople = adults + kids;
+            const uiaInflow = totalPeople * 17500;
+
+            // 2. Direct Income & Payroll Tax Savings (e.g. 22% effective average)
+            const taxSavings = income * 0.22;
+
+            // 3. Employer Pay Bump (Savings from employer FICA and compliance pass-through ~5%)
+            const employerBump = income * 0.05;
+
+            // 4. Estimate Consumer Spending based on Income, Household Size & Life Stage
+            let spendingPropensity = 0.55; // Base 55%
+            if (lifeStage === 'early_career') spendingPropensity = 0.65;
+            if (lifeStage === 'working_family') spendingPropensity = 0.55 + (kids * 0.04);
+            if (lifeStage === 'retired') spendingPropensity = 0.75;
+            if (lifeStage === 'established') spendingPropensity = 0.25;
+
+            const spending = income * Math.min(spendingPropensity, 0.85);
+
+            // Cheaper consumer goods discount (10% from tariff & sales tax elimination)
+            const consumerSavings = spending * 0.10;
+
+            // 5. Estimate Unimproved Land Value from Home Market Value, Lot Size & State
+            let landRatio = 0.30; // Default suburban 30% land value
+            if (lotSize === 'condo') landRatio = 0.15;
+            if (lotSize === 'urban') landRatio = 0.40;
+            if (lotSize === 'suburban_quarter') landRatio = 0.30;
+            if (lotSize === 'suburban_half') landRatio = 0.38;
+            if (lotSize === 'rural_acre') landRatio = 0.45;
+
+            let stateMultiplier = 1.0;
+            if (state === 'high') stateMultiplier = 1.25;
+            if (state === 'low') stateMultiplier = 0.80;
+
+            const unimprovedLandValue = homeValue * landRatio * stateMultiplier;
+
+            // Property Tax / Land Lease Adjustment (20% tax rate on unimproved land per user conversation)
+            const landLease = unimprovedLandValue * 0.20;
+
+            // 6. Direct Service & Education Costs ($6,000 per dependent child for schooling choice)
+            const serviceFees = kids * 6000;
+
+            // Total Net Civic Return
+            const netReturn = uiaInflow + taxSavings + employerBump + consumerSavings - landLease - serviceFees;
+
+            // Update UI Displays
+            document.getElementById('autoSpending').innerText = `$${Math.round(spending).toLocaleString()}`;
+            document.getElementById('autoLandValue').innerText = `$${Math.round(unimprovedLandValue).toLocaleString()}`;
+
+            document.getElementById('resUIA').innerText = `+$${uiaInflow.toLocaleString()}`;
+            document.getElementById('resTaxSavings').innerText = `+$${Math.round(taxSavings).toLocaleString()}`;
+            document.getElementById('resEmployerBump').innerText = `+$${Math.round(employerBump).toLocaleString()}`;
+            document.getElementById('resConsumerSavings').innerText = `+$${Math.round(consumerSavings).toLocaleString()}`;
+            document.getElementById('resLandLease').innerText = `-$${Math.round(landLease).toLocaleString()}`;
+            document.getElementById('resServiceFees').innerText = `-$${Math.round(serviceFees).toLocaleString()}`;
+
+            const totalEl = document.getElementById('resNetCivicReturn');
+            totalEl.innerText = `${netReturn >= 0 ? '+' : ''}$${Math.round(netReturn).toLocaleString()} / yr`;
+            if (netReturn < 0) {
+                totalEl.className = "text-3xl sm:text-4xl font-black text-rose-600 font-mono mt-1";
+            } else {
+                totalEl.className = "text-3xl sm:text-4xl font-black text-brand-500 font-mono mt-1";
+            }
+        }
+
+        // Filtering policies
+        function filterPolicies() {
+            const query = document.getElementById('policySearch').value.toLowerCase();
+            const cards = document.querySelectorAll('.policy-card');
+
+            cards.forEach(card => {
+                const keywords = card.getAttribute('data-keywords').toLowerCase();
+                const text = card.innerText.toLowerCase();
+                if (keywords.includes(query) || text.includes(query)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function setFilter(type) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('bg-brand-500', 'text-white');
+                btn.classList.add('bg-surface-card', 'text-secondary-800', 'border', 'border-secondary-200');
+            });
+            event.target.classList.add('bg-brand-500', 'text-white');
+            event.target.classList.remove('bg-surface-card', 'text-secondary-800', 'border', 'border-secondary-200');
+
+            const cards = document.querySelectorAll('.policy-card');
+            const headers = document.querySelectorAll('.part-header');
+
+            cards.forEach(card => {
+                const part = card.getAttribute('data-part');
+                if (type === 'all' || part === type) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            headers.forEach(header => {
+                const part = header.getAttribute('data-part');
+                if (type === 'all' || part === type) {
+                    header.style.display = 'block';
+                } else {
+                    header.style.display = 'none';
+                }
+            });
+        }
+
+        // Micro polling vote logic
+        function vote(secId, choice) {
+            const container = document.getElementById(`poll-${secId}`);
+            localStorage.setItem(`vote-${secId}`, choice);
+            container.innerHTML = `<span class="text-xs font-bold text-brand-500">✓ Recorded (${choice.toUpperCase()})</span>`;
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function toggleOraModal() {
+            const modal = document.getElementById('oraModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function handleSignup(e) {
+            e.preventDefault();
+            document.getElementById('signupFeedback').classList.remove('hidden');
+        }
+
+        // Initialize calculator on page load
+        calculateNetCivicReturn();
+    </script>
+</body>
+</html>
